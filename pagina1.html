@@ -2,8 +2,26 @@
 <html>
 <head>
     <title>Acerca de Nosotros</title>
+    <link rel="stylesheet" href="https://unpkg.com/transition-style">
+
+   <style type="text/css">
+    @keyframes circle-swoop {
+  from {
+    clip-path: var(--circle-top-right-out);
+  }
+  to {
+    clip-path: var(--circle-bottom-right-in);
+  }
+}
+
+.--in-custom {
+  --transition__duration: 1s;
+  --transition__easing: ease-in-out;
+  animation-name: circle-swoop;
+}
+</style>
 </head>
-<body>
+<body transition-style class="--in-custom">
     <header>
         <h1>Acerca de Nosotros</h1>
         <nav>
@@ -16,6 +34,9 @@
             </ul>
         </nav>
     </header>
+    <div >
+  A custom transitioned element
+</div>
     <section>
         <h2>Nuestra Historia</h2>
         <p>Somos una empresa dedicada a...</p>
